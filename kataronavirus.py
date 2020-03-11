@@ -25,6 +25,9 @@ class CovidScore:
     def heal_couple(self):
         self._healed += self.COUPLE_VALUE
 
+    def heal_family(self):
+        self._healed += self.FAMILY_VALUE
+
     def get_score(self) -> str:
         return f'{self._format(self._killed)}-{self._format(self._healed)}'
 
