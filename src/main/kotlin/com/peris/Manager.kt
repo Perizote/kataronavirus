@@ -9,15 +9,13 @@ class Manager {
         return "${kills.toString().padStart(3, '0')}:${safe.toString().padStart(3, '0')}"
     }
 
-    fun kill() {
-        kills++
+    fun kill(killMode: KillMode) {
+        kills += killMode.value
     }
+}
 
-    fun kill2() {
-        kills += 2
-    }
-
-    fun kill3() {
-        kills += 3
-    }
+enum class KillMode(val value: Int) {
+    PERSON(1),
+    COUPLE(2),
+    FAMILY(3)
 }

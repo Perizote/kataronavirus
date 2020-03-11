@@ -25,21 +25,21 @@ class ManagerTest {
 
     @Test
     fun case3() {
-        manager.kill()
+        manager.kill(KillMode.PERSON)
 
         assertEquals("001:000", manager.execute())
     }
 
     @Test
     fun case4() {
-        manager.kill2()
+        manager.kill(KillMode.COUPLE)
 
         assertEquals("002:000", manager.execute())
     }
 
     @Test
     fun case5() {
-        manager.kill3()
+        manager.kill(KillMode.FAMILY)
 
         assertEquals("003:000", manager.execute())
     }
