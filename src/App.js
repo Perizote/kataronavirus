@@ -16,6 +16,11 @@ class App extends Component {
     this.setState({kills: currentKills + persons})
   }
 
+  save = persons => {
+    const currentSaves = this.state.survivors
+    this.setState({survivors: currentSaves + persons})
+  }
+
   render() {
     const kills = this.state.kills.toString().padStart(3, '0')
     const survivors = this.state.survivors.toString().padStart(3, '0')
@@ -24,6 +29,7 @@ class App extends Component {
         <button onClick={ () => this.kill(PERSON) }>Kill person</button>
         <button onClick={ () => this.kill(COUPLE) }>Kill couple</button>
         <button onClick={ () => this.kill(FAMILY) }>Kill family</button>
+        <button onClick={ () => this.save(PERSON) }>Save person</button>
         { kills }:{ survivors }
       </div>
     );

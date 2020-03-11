@@ -40,3 +40,12 @@ test('should coronavirus kills a family', () => {
 
   expect(getByText('003:000')).toBeInTheDocument()
 });
+
+test('should save a person', () => {
+  const { getByText } = render(<App />);
+
+  fireEvent.click(getByText('Save person'))
+
+  expect(getByText('000:001')).toBeInTheDocument()
+});
+
