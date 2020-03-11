@@ -44,3 +44,9 @@ class TestKataronaVirus:
         scoring.couple_saved()
 
         assert scoring.scoring() == '000:002'
+
+    def test_score_is_0_4_when_family_saved(self):
+        scoring = KataronaVirus()
+        scoring.family_saved()
+
+        assert scoring.scoring() == '000:004'
