@@ -55,8 +55,8 @@ func calculateScore(for actions: [Action]) -> (Int, Int) {
     return (totalDeaths, totalSurvived)
 }
 
-func output(deaths: Int, lives: Int) -> String {
-    let left = String(format: "%03d", deaths)
-    let right = String(format: "%03d", lives)
-    return "\(left):\(right)"
+func output(_ input: (deaths: Int, survived: Int)) -> String {
+    let deathScore = String(format: "%03d", input.deaths)
+    let surviveScore = String(format: "%03d", input.survived)
+    return "\(deathScore):\(surviveScore)"
 }

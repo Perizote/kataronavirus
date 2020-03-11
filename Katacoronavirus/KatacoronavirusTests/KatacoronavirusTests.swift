@@ -11,7 +11,7 @@ import XCTest
 
 class KatacoronavirusTests: XCTestCase {
     func testGivenANumberOfDeathsAndLives_formatsTheOutput() {
-        XCTAssertEqual("001:002", output(deaths: 1, lives: 2))
+        XCTAssertEqual("001:002", output((deaths: 1, survived: 2)))
     }
 
     func testGivenAListOfEvents_returnsScore() {
@@ -29,7 +29,7 @@ class KatacoronavirusTests: XCTestCase {
 
     func testGivenAnEmptyListOfActions_returnsCalculatedScore() {
         let input = [Action]()
-        
+
         XCTAssertEqual("000:000", main(input))
     }
 }
