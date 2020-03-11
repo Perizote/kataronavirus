@@ -10,4 +10,4 @@ class CovidScore:
         self._score +=2
 
     def get_score(self) -> str:
-        return f'00{self._score}-000'
+        return f'{str(self._score).zfill(3)}-000'

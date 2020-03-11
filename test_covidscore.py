@@ -23,3 +23,10 @@ class TestCovidScore:
         score_board.kill_couple()
 
         assert score_board.get_score() == "003-000"
+
+    def test_can_kills_more_than_nine_people(self):
+        score_board = CovidScore()
+
+        for _ in range(10):
+            score_board.kill_one()
+        assert score_board.get_score() == "010-000"
