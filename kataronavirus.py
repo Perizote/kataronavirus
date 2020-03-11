@@ -6,7 +6,6 @@ class KataronaVirus:
 
     coronavirus_score = 0
     humanity_score = 0
-    score = '000:000'
 
     def person_killed(self):
         self.coronavirus_score += self.ONE_PERSON_SCORE
