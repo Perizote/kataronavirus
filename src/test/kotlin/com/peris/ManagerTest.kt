@@ -16,4 +16,11 @@ class ManagerTest {
     fun case2() {
         assertEquals("000:000", manager.execute())
     }
+
+    @Test
+    fun case3() {
+        manager.kill()
+
+        assertEquals("001:000", manager.execute())
+    }
 }

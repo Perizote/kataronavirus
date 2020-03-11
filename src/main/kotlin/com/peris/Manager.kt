@@ -8,4 +8,8 @@ class Manager {
     fun execute(): String {
         return "${kills.toString().padStart(3, '0')}:${safe.toString().padStart(3, '0')}"
     }
+
+    fun kill() {
+        kills++
+    }
 }
