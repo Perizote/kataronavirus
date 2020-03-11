@@ -45,7 +45,7 @@ func survive(_ action: Action) -> Bool {
 }
 
 func main(_ actions: [Action]) -> String {
-    return ""
+    output(calculateScore(for: actions))
 }
 
 func calculateScore(for actions: [Action]) -> (Int, Int) {
