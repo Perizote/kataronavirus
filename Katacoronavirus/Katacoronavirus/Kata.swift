@@ -9,5 +9,7 @@
 import Foundation
 
 func output(deaths: Int, lives: Int) -> String {
-    fatalError()
+    let left = String(format: "%03d", deaths)
+    let right = String(format: "%03d", lives)
+    return "\(left):\(right)"
 }
