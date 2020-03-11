@@ -24,3 +24,11 @@ test('should coronavirus kills more than one person', () => {
 
   expect(container).toHaveTextContent('002:000')
 });
+
+test('should coronavirus kills a couple', () => {
+  const { container, getByText } = render(<App />);
+
+  fireEvent.click(getByText('Kill couple'))
+
+  expect(container).toHaveTextContent('002:000')
+});

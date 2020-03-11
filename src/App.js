@@ -8,10 +8,13 @@ class App extends Component {
   }
 
   killPerson = () => {
-
     const currentKills = this.state.kills
-
     this.setState({kills: currentKills + 1})
+  }
+
+  killCouple = () => {
+    const currentKills = this.state.kills
+    this.setState({kills: currentKills + 2})
   }
 
   render() {
@@ -19,6 +22,7 @@ class App extends Component {
     const survivors = this.state.survivors
     return (
       <div className="App">
+        <button onClick={ this.killCouple }>Kill couple</button>
         <button onClick={ this.killPerson }>Kill person</button>
         00{ kills }:00{ survivors }
       </div>
