@@ -20,4 +20,16 @@ class KatacoronavirusTests: XCTestCase {
         XCTAssertEqual(3, calculateScore(for: input).0)
         XCTAssertEqual(4, calculateScore(for: input).1)
     }
+
+    func testGivenAListOfActions_returnsCalculatedScore() {
+        let input = [Action.death(.single), .death(.couple), .survive(.family)]
+
+        XCTAssertEqual("003:004", main(input))
+    }
+
+    func testGivenAnEmptyListOfActions_returnsCalculatedScore() {
+        let input = [Action]()
+        
+        XCTAssertEqual("000:000", main(input))
+    }
 }

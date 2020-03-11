@@ -44,6 +44,10 @@ func survive(_ action: Action) -> Bool {
     }
 }
 
+func main(_ actions: [Action]) -> String {
+    return ""
+}
+
 func calculateScore(for actions: [Action]) -> (Int, Int) {
     let totalDeaths = actions.filter(death).map { $0.value }.reduce(0, +)
     let totalSurvived = actions.filter(survive).map { $0.value }.reduce(0, +)
