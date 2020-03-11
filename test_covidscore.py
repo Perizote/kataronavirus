@@ -23,17 +23,6 @@ class TestCovidScore:
 
         assert score_board.get_score() == "004-000"
 
-    def test_different_kind_of_kills_are_added(self):
-        score_board = CovidScore()
-
-        score_board.kill_one()
-        score_board.kill_one()
-        score_board.kill_couple()
-        score_board.kill_couple()
-        score_board.kill_family()
-
-        assert score_board.get_score() == "010-000"
-
     def test_heals_a_person(self):
         score_board = CovidScore()
 
@@ -54,3 +43,18 @@ class TestCovidScore:
         score_board.heal_family()
 
         assert score_board.get_score() == "000-004"
+
+    def test_different_kind_of_kills_and_heals_are_added(self):
+        score_board = CovidScore()
+
+        score_board.kill_one()
+        score_board.heal_one()
+        score_board.kill_one()
+        score_board.kill_couple()
+        score_board.heal_couple()
+        score_board.kill_couple()
+        score_board.kill_family()
+        score_board.heal_family()
+        score_board.heal_family()
+
+        assert score_board.get_score() == "010-011"
