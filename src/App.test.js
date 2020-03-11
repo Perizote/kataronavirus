@@ -57,3 +57,11 @@ test('should save a couple', () => {
   expect(getByText('000:002')).toBeInTheDocument()
 });
 
+test('should save a family', () => {
+  const { getByText } = render(<App />);
+
+  fireEvent.click(getByText('Save family'))
+
+  expect(getByText('000:003')).toBeInTheDocument()
+});
+

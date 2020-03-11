@@ -31,6 +31,7 @@ class App extends Component {
         <button onClick={ () => this.kill(FAMILY) }>Kill family</button>
         <button onClick={ () => this.save(PERSON) }>Save person</button>
         <button onClick={ () => this.save(COUPLE) }>Save couple</button>
+        <button onClick={ () => this.save(FAMILY) }>Save family</button>
         { kills }:{ survivors }
       </div>
     );
