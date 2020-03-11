@@ -18,11 +18,37 @@ enum Action {
     case death(People)
     case survive(People)
 
-    var value: Int { 0 }
+    var people: People {
+        switch self {
+        case .death(let people): return people
+        case .survive(let people): return people
+        }
+    }
+
+    var value: Int {
+        people.rawValue
+    }
+}
+
+func death(_ action: Action) -> Bool {
+    switch action {
+    case .death: return true
+    case .survive: return false
+    }
+}
+
+func survive(_ action: Action) -> Bool {
+    switch action {
+    case .death: return false
+    case .survive: return true
+    }
 }
 
 func calculateScore(for actions: [Action]) -> (Int, Int) {
-    fatalError()
+    let totalDeaths = actions.filter(death).map { $0.value }.reduce(0, +)
+    let totalSurvived = actions.filter(survive).map { $0.value }.reduce(0, +)
+
+    return (totalDeaths, totalSurvived)
 }
 
 func output(deaths: Int, lives: Int) -> String {
