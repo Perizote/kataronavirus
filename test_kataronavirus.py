@@ -57,3 +57,10 @@ class TestKataronaVirus:
         scoring.family_saved()
 
         assert scoring.scoring() == '000:008'
+
+    def test_score_is_1_1_when_person_died_and_person_saved(self):
+        scoring = KataronaVirus()
+        scoring.person_killed()
+        scoring.person_saved()
+
+        assert scoring.scoring() == '001:001'
