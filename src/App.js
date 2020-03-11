@@ -17,14 +17,14 @@ class App extends Component {
   }
 
   render() {
-    const kills = this.state.kills
-    const survivors = this.state.survivors
+    const kills = this.state.kills.toString().padStart(3, '0')
+    const survivors = this.state.survivors.toString().padStart(3, '0')
     return (
       <div className="App">
         <button onClick={ () => this.kill(PERSON) }>Kill person</button>
         <button onClick={ () => this.kill(COUPLE) }>Kill couple</button>
         <button onClick={ () => this.kill(FAMILY) }>Kill family</button>
-        00{ kills }:00{ survivors }
+        { kills }:{ survivors }
       </div>
     );
   }
