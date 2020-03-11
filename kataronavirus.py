@@ -1,32 +1,35 @@
+class Value:
+    INITIAL = 0
+    PERSON = 1
+    COUPLE = 2
+    FAMILY = 4
+
+
 class CovidScore:
 
     SCORE_LENGTH = 3
-    INITIAL_VALUE = 0
-    PERSON_VALUE = 1
-    COUPLE_VALUE = 2
-    FAMILY_VALUE = 4
 
     def __init__(self):
-        self._killed = self.INITIAL_VALUE
-        self._healed = self.INITIAL_VALUE
+        self._killed = Value.INITIAL
+        self._healed = Value.INITIAL
 
     def kill_one(self):
-        self._killed += self.PERSON_VALUE
+        self._killed += Value.PERSON
 
     def kill_couple(self):
-        self._killed += self.COUPLE_VALUE
+        self._killed += Value.COUPLE
 
     def kill_family(self):
-        self._killed += self.FAMILY_VALUE
+        self._killed += Value.FAMILY
 
     def heal_one(self):
-        self._healed += self.PERSON_VALUE
+        self._healed += Value.PERSON
 
     def heal_couple(self):
-        self._healed += self.COUPLE_VALUE
+        self._healed += Value.COUPLE
 
     def heal_family(self):
-        self._healed += self.FAMILY_VALUE
+        self._healed += Value.FAMILY
 
     def get_score(self) -> str:
         return f'{self._format(self._killed)}-{self._format(self._healed)}'
