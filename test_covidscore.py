@@ -40,3 +40,10 @@ class TestCovidScore:
         score_board.heal_one()
 
         assert score_board.get_score() == "000-001"
+
+    def test_heals_a_couple(self):
+        score_board = CovidScore()
+
+        score_board.heal_couple()
+
+        assert score_board.get_score() == "000-002"
