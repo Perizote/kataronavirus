@@ -28,19 +28,19 @@ enum Action {
     var value: Int {
         people.rawValue
     }
-}
 
-func death(_ action: Action) -> Bool {
-    switch action {
-    case .death: return true
-    case .survive: return false
+    static func death(_ action: Action) -> Bool {
+        switch action {
+        case .death: return true
+        case .survive: return false
+        }
     }
-}
 
-func survive(_ action: Action) -> Bool {
-    switch action {
-    case .death: return false
-    case .survive: return true
+    static func survive(_ action: Action) -> Bool {
+        switch action {
+        case .death: return false
+        case .survive: return true
+        }
     }
 }
 
@@ -49,8 +49,8 @@ func main(_ actions: [Action]) -> String {
 }
 
 func calculateScore(for actions: [Action]) -> (Int, Int) {
-    let totalDeaths = actions.filter(death).map { $0.value }.reduce(0, +)
-    let totalSurvived = actions.filter(survive).map { $0.value }.reduce(0, +)
+    let totalDeaths = actions.filter(Action.death).map { $0.value }.reduce(0, +)
+    let totalSurvived = actions.filter(Action.survive).map { $0.value }.reduce(0, +)
 
     return (totalDeaths, totalSurvived)
 }
