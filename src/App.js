@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   state = {
-    counter: '000:000'
+    kills: 0,
+    survivors: 0,
   }
 
   killPerson = () => {
-    this.setState({counter: '001:000'})
+
+    const currentKills = this.state.kills
+
+    this.setState({kills: currentKills + 1})
   }
 
   render() {
+    const kills = this.state.kills
+    const survivors = this.state.survivors
     return (
       <div className="App">
         <button onClick={ this.killPerson }>Kill person</button>
-        { this.state.counter }
+        00{ kills }:00{ survivors }
       </div>
     );
   }
