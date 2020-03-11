@@ -1,9 +1,17 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 
 test('should see the score', () => {
   const { container } = render(<App />);
 
   expect(container).toHaveTextContent('000:000')
+});
+
+test('should coronavirus kills a person', () => {
+  const { container, getByText } = render(<App />);
+
+  fireEvent.click(getByText('Kill person'))
+
+  expect(container).toHaveTextContent('001:000')
 });
