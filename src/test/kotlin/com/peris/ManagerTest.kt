@@ -1,11 +1,17 @@
 package com.peris
 
 import junit.framework.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 
 class ManagerTest {
 
-    private val manager = Manager()
+    private lateinit var manager: Manager
+
+    @Before
+    fun setUp() {
+        manager = Manager()
+    }
 
     @Test
     fun case1() {
@@ -29,5 +35,12 @@ class ManagerTest {
         manager.kill2()
 
         assertEquals("002:000", manager.execute())
+    }
+
+    @Test
+    fun case5() {
+        manager.kill3()
+
+        assertEquals("003:000", manager.execute())
     }
 }

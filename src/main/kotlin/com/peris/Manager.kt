@@ -16,4 +16,8 @@ class Manager {
     fun kill2() {
         kills += 2
     }
+
+    fun kill3() {
+        kills += 3
+    }
 }
