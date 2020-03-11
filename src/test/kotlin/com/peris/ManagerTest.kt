@@ -57,4 +57,11 @@ class ManagerTest {
 
         assertEquals("000:002", manager.execute())
     }
+
+    @Test
+    fun case8() {
+        manager.recover(RecoveryMode.FAMILY)
+
+        assertEquals("000:003", manager.execute())
+    }
 }
