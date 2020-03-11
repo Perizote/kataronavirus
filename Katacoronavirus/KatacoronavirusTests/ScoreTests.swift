@@ -1,5 +1,5 @@
 //
-//  KatacoronavirusTests.swift
+//  ScoreTests.swift
 //  KatacoronavirusTests
 //
 //  Created by Victor Berga on 11/03/2020.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Katacoronavirus
 
-class KatacoronavirusTests: XCTestCase {
+class ScoreTests: XCTestCase {
     func testGivenANumberOfDeathsAndLives_formatsTheOutput() {
         XCTAssertEqual("001:002", Score.format((deaths: 1, survived: 2)))
     }
@@ -19,17 +19,5 @@ class KatacoronavirusTests: XCTestCase {
 
         XCTAssertEqual(3, Score.calculate(for: input).0)
         XCTAssertEqual(4, Score.calculate(for: input).1)
-    }
-
-    func testGivenAListOfActions_returnsCalculatedScore() {
-        let input = [Action.death(.single), .death(.couple), .survive(.family)]
-
-        XCTAssertEqual("003:004", main(input))
-    }
-
-    func testGivenAnEmptyListOfActions_returnsCalculatedScore() {
-        let input = [Action]()
-
-        XCTAssertEqual("000:000", main(input))
     }
 }

@@ -13,11 +13,12 @@
 		5CB049EB2419443100DE62F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB049E92419443100DE62F7 /* Main.storyboard */; };
 		5CB049ED2419443200DE62F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB049EC2419443200DE62F7 /* Assets.xcassets */; };
 		5CB049F02419443200DE62F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB049EE2419443200DE62F7 /* LaunchScreen.storyboard */; };
-		5CB049FB2419443200DE62F7 /* KatacoronavirusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB049FA2419443200DE62F7 /* KatacoronavirusTests.swift */; };
 		5CB04A062419458100DE62F7 /* Kata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB04A052419458100DE62F7 /* Kata.swift */; };
 		5CB04A0824194F9000DE62F7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB04A0724194F9000DE62F7 /* Score.swift */; };
 		5CB04A0A24194F9F00DE62F7 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB04A0924194F9F00DE62F7 /* Action.swift */; };
 		5CB04A0C24194FB000DE62F7 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB04A0B24194FB000DE62F7 /* People.swift */; };
+		5CF43ABB241950DC00843B23 /* KataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43ABA241950DC00843B23 /* KataTests.swift */; };
+		5CF43ABD241950EF00843B23 /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43ABC241950EF00843B23 /* ScoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +41,13 @@
 		5CB049EF2419443200DE62F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CB049F12419443200DE62F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CB049F62419443200DE62F7 /* KatacoronavirusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatacoronavirusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CB049FA2419443200DE62F7 /* KatacoronavirusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatacoronavirusTests.swift; sourceTree = "<group>"; };
 		5CB049FC2419443200DE62F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CB04A052419458100DE62F7 /* Kata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kata.swift; sourceTree = "<group>"; };
 		5CB04A0724194F9000DE62F7 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		5CB04A0924194F9F00DE62F7 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		5CB04A0B24194FB000DE62F7 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		5CF43ABA241950DC00843B23 /* KataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KataTests.swift; sourceTree = "<group>"; };
+		5CF43ABC241950EF00843B23 /* ScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +104,9 @@
 		5CB049F92419443200DE62F7 /* KatacoronavirusTests */ = {
 			isa = PBXGroup;
 			children = (
-				5CB049FA2419443200DE62F7 /* KatacoronavirusTests.swift */,
+				5CF43ABA241950DC00843B23 /* KataTests.swift */,
 				5CB049FC2419443200DE62F7 /* Info.plist */,
+				5CF43ABC241950EF00843B23 /* ScoreTests.swift */,
 			);
 			path = KatacoronavirusTests;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 					};
 					5CB049F52419443200DE62F7 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 5CB049DF2419443100DE62F7;
 					};
 				};
@@ -234,7 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CB049FB2419443200DE62F7 /* KatacoronavirusTests.swift in Sources */,
+				5CF43ABD241950EF00843B23 /* ScoreTests.swift in Sources */,
+				5CF43ABB241950DC00843B23 /* KataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +426,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KatacoronavirusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -431,6 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = es.mercadona.tests.KatacoronavirusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Katacoronavirus.app/Katacoronavirus";
@@ -442,6 +449,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KatacoronavirusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
