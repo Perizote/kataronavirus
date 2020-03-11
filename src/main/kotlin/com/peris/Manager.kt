@@ -12,9 +12,20 @@ class Manager {
     fun kill(killMode: KillMode) {
         kills += killMode.value
     }
+
+    fun recover(recoveryMode: RecoveryMode) {
+        safe += recoveryMode.value
+    }
 }
 
 enum class KillMode(val value: Int) {
+    PERSON(1),
+    COUPLE(2),
+    FAMILY(3)
+}
+
+
+enum class RecoveryMode(val value: Int) {
     PERSON(1),
     COUPLE(2),
     FAMILY(3)
