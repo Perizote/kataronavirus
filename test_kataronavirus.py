@@ -50,3 +50,10 @@ class TestKataronaVirus:
         scoring.family_saved()
 
         assert scoring.scoring() == '000:004'
+
+    def test_score_is_0_8_when_two_family_saved(self):
+        scoring = KataronaVirus()
+        scoring.family_saved()
+        scoring.family_saved()
+
+        assert scoring.scoring() == '000:008'
