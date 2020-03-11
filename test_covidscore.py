@@ -23,12 +23,16 @@ class TestCovidScore:
 
         assert score_board.get_score() == "004-000"
 
-    def test_can_add_kills(self):
+    def test_different_kind_of_kills_are_added(self):
         score_board = CovidScore()
 
-        for _ in range(999):
-            score_board.kill_one()
-        assert score_board.get_score() == "999-000"
+        score_board.kill_one()
+        score_board.kill_one()
+        score_board.kill_couple()
+        score_board.kill_couple()
+        score_board.kill_family()
+
+        assert score_board.get_score() == "010-000"
 
     def test_heals_a_person(self):
         score_board = CovidScore()
