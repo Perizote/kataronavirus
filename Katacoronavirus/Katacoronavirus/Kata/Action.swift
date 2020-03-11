@@ -1,5 +1,5 @@
 //
-//  Kata.swift
+//  Action.swift
 //  Katacoronavirus
 //
 //  Created by Victor Berga on 11/03/2020.
@@ -7,12 +7,6 @@
 //
 
 import Foundation
-
-enum People: Int {
-    case single = 1
-    case couple = 2
-    case family = 4
-}
 
 enum Action {
     case death(People)
@@ -42,21 +36,4 @@ enum Action {
         case .survive: return true
         }
     }
-}
-
-func main(_ actions: [Action]) -> String {
-    output(calculateScore(for: actions))
-}
-
-func calculateScore(for actions: [Action]) -> (Int, Int) {
-    let totalDeaths = actions.filter(Action.death).map { $0.value }.reduce(0, +)
-    let totalSurvived = actions.filter(Action.survive).map { $0.value }.reduce(0, +)
-
-    return (totalDeaths, totalSurvived)
-}
-
-func output(_ input: (deaths: Int, survived: Int)) -> String {
-    let deathScore = String(format: "%03d", input.deaths)
-    let surviveScore = String(format: "%03d", input.survived)
-    return "\(deathScore):\(surviveScore)"
 }

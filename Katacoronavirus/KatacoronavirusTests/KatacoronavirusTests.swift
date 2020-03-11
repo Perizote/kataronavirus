@@ -11,14 +11,14 @@ import XCTest
 
 class KatacoronavirusTests: XCTestCase {
     func testGivenANumberOfDeathsAndLives_formatsTheOutput() {
-        XCTAssertEqual("001:002", output((deaths: 1, survived: 2)))
+        XCTAssertEqual("001:002", Score.format((deaths: 1, survived: 2)))
     }
 
     func testGivenAListOfEvents_returnsScore() {
         let input = [Action.death(.single), .death(.couple), .survive(.family)]
 
-        XCTAssertEqual(3, calculateScore(for: input).0)
-        XCTAssertEqual(4, calculateScore(for: input).1)
+        XCTAssertEqual(3, Score.calculate(for: input).0)
+        XCTAssertEqual(4, Score.calculate(for: input).1)
     }
 
     func testGivenAListOfActions_returnsCalculatedScore() {
