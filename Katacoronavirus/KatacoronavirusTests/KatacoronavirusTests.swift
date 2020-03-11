@@ -13,4 +13,11 @@ class KatacoronavirusTests: XCTestCase {
     func testGivenANumberOfDeathsAndLives_formatsTheOutput() {
         XCTAssertEqual("001:002", output(deaths: 1, lives: 2))
     }
+
+    func testGivenAListOfEvents_returnsScore() {
+        let input = [Action.death(.single), .death(.couple), .survive(.family)]
+
+        XCTAssertEqual(3, calculateScore(for: input).0)
+        XCTAssertEqual(4, calculateScore(for: input).1)
+    }
 }
