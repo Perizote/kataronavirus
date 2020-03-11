@@ -16,6 +16,13 @@ class TestCovidScore:
 
         assert score_board.get_score() == "002-000"
 
+    def test_kills_one_family(self):
+        score_board = CovidScore()
+
+        score_board.kill_family()
+
+        assert score_board.get_score() == "004-000"
+
     def test_can_add_kills(self):
         score_board = CovidScore()
 

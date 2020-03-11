@@ -10,7 +10,10 @@ class CovidScore:
         self._killed += 1
 
     def kill_couple(self):
-        self._killed +=2
+        self._killed += 2
+
+    def kill_family(self):
+        self._killed += 4
 
     def heal_one(self):
         self._healed += 1
