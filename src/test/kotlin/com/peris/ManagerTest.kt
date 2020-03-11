@@ -25,42 +25,42 @@ class ManagerTest {
 
     @Test
     fun case3() {
-        manager.kill(KillMode.PERSON)
+        manager.kill(Mode.PERSON)
 
         assertEquals("001:000", manager.execute())
     }
 
     @Test
     fun case4() {
-        manager.kill(KillMode.COUPLE)
+        manager.kill(Mode.COUPLE)
 
         assertEquals("002:000", manager.execute())
     }
 
     @Test
     fun case5() {
-        manager.kill(KillMode.FAMILY)
+        manager.kill(Mode.FAMILY)
 
         assertEquals("003:000", manager.execute())
     }
 
     @Test
     fun case6() {
-        manager.recover(RecoveryMode.PERSON)
+        manager.recover(Mode.PERSON)
 
         assertEquals("000:001", manager.execute())
     }
 
     @Test
     fun case7() {
-        manager.recover(RecoveryMode.COUPLE)
+        manager.recover(Mode.COUPLE)
 
         assertEquals("000:002", manager.execute())
     }
 
     @Test
     fun case8() {
-        manager.recover(RecoveryMode.FAMILY)
+        manager.recover(Mode.FAMILY)
 
         assertEquals("000:003", manager.execute())
     }
