@@ -49,3 +49,11 @@ test('should save a person', () => {
   expect(getByText('000:001')).toBeInTheDocument()
 });
 
+test('should save a couple', () => {
+  const { getByText } = render(<App />);
+
+  fireEvent.click(getByText('Save couple'))
+
+  expect(getByText('000:002')).toBeInTheDocument()
+});
+
