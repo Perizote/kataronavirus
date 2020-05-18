@@ -100,3 +100,16 @@ test('Heal a family', ()=>{
   expect(counterLabel).toHaveTextContent('000:004');
 
 });
+
+test('Heal 4 families', ()=>{
+  const { getByText } = render(<App />);
+
+  const killFamily = getByText('🏥👨‍👨‍👧‍👦');
+  fireEvent.click(killFamily);
+  fireEvent.click(killFamily);
+  fireEvent.click(killFamily);
+  fireEvent.click(killFamily);
+  const counterLabel = getByText('000:016');
+
+  expect(counterLabel).toBeTruthy();
+})
