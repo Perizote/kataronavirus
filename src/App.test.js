@@ -14,7 +14,7 @@ test('Check for counter', () => {
 test('Kill one person', ()=>{
   const { getByText, getByLabelText } = render(<App />);
 
-  const killOnePerson = getByText('🙎‍♀️');
+  const killOnePerson = getByText('☠🙎‍♀️');
 
   fireEvent.click(killOnePerson);
 
@@ -26,7 +26,7 @@ test('Kill one person', ()=>{
 test('Kill a couple person', ()=>{
   const { getByText, getByLabelText } = render(<App />);
 
-  const killCouple = getByText('👩‍❤️‍💋‍👩');
+  const killCouple = getByText('☠👩‍❤️‍💋‍👩');
 
   fireEvent.click(killCouple);
 
@@ -39,7 +39,7 @@ test('Kill a couple person', ()=>{
 test('Kill a family', ()=>{
   const { getByText, getByLabelText } = render(<App />);
 
-  const killFamily = getByText('👨‍👨‍👧‍👦');
+  const killFamily = getByText('☠👨‍👨‍👧‍👦');
 
   fireEvent.click(killFamily);
 

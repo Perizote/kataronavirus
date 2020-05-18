@@ -11,9 +11,7 @@ function App() {
   }
 
   const [killed, setKilled] = useState(0);
-  const [healPerson, setHealedPerson] = useState(0);
-  const [healCouple, setHeadelCouple] = useState(0);
-  const [healFamily, setHealedFamily] = useState(0);
+  const [healed, setHealed] = useState(0);
 
   const kill = (size) => {
     const increment = size;
@@ -24,29 +22,25 @@ function App() {
   const killCouple = ()=>kill(SIZES.couple);
   const killFamily = ()=>kill(SIZES.family);
 
-  const clickHealPerson = ()=>{
-    setHealedPerson(healPerson+1);
+  const heal = (size) => {
+    const increment = size;
+    setHealed( healed + increment );
   }
 
-  const clickHealCouple = ()=>{
-    setHeadelCouple(healCouple+2);
-  }
-
-  const clickHealFamily = ()=>{
-    setHealedFamily(healFamily+4);
-  }
-
+  const healPerson = ()=>heal(SIZES.person);
+  const healCouple = ()=>heal(SIZES.couple);
+  const healFamily = ()=>heal(SIZES.family);
 
   return (
     <div className="App">
       <label htmlFor="labCount">Counter</label>
-  <div id="labCount">00{killed}:00{healPerson + healCouple + healFamily}</div>
-      <button onClick={killPerson}>🙎‍♀️</button>
-      <button onClick={killCouple}>👩‍❤️‍💋‍👩</button>
-      <button onClick={killFamily}>👨‍👨‍👧‍👦</button>
-      <button onClick={clickHealPerson}>🏥🙎‍♀️</button>
-      <button onClick={clickHealCouple}>🏥👩‍❤️‍💋‍👩</button>
-      <button onClick={clickHealFamily}>🏥👨‍👨‍👧‍👦</button>
+      <div id="labCount">00{killed}:00{healed}</div>
+      <button onClick={killPerson}>☠🙎‍♀️</button>
+      <button onClick={killCouple}>☠👩‍❤️‍💋‍👩</button>
+      <button onClick={killFamily}>☠👨‍👨‍👧‍👦</button>
+      <button onClick={healPerson}>🏥🙎‍♀️</button>
+      <button onClick={healCouple}>🏥👩‍❤️‍💋‍👩</button>
+      <button onClick={healFamily}>🏥👨‍👨‍👧‍👦</button>
     </div>
   );
 }
