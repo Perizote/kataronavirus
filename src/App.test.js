@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 
 test('Check for counter', () => {
@@ -11,6 +11,15 @@ test('Check for counter', () => {
   expect(counterLabel).toHaveTextContent('000:000');
 
 });
-// test('', ()=>{
+test('Kill one person', ()=>{
+  const { getByText, getByLabelText } = render(<App />);
 
-// });
+  const killOnePerson = getByText('🙎‍♀️');
+
+  fireEvent.click(killOnePerson);
+
+  const counterLabel = getByLabelText('Counter');
+
+  expect(counterLabel).toHaveTextContent('001:000');
+
+});
