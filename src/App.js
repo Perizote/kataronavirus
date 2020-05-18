@@ -13,17 +13,17 @@ function App() {
   const addCoupleKilled = ()=>{
     setCoupleKilled(coupleKilled+2);
   }
-  // const addFamilyKilled = ()=>{
-  //   setFamilyKilled(FamilyKilled+1);
-  // }
+  const addFamilyKilled = ()=>{
+    setFamilyKilled(familyKilled+4);
+  }
 
   return (
     <div className="App">
       <label htmlFor="labCount">Counter</label>
-      <div id="labCount">00{coupleKilled + peopleKilled}:000</div>
+      <div id="labCount">00{coupleKilled + peopleKilled + familyKilled}:000</div>
       <button onClick={addPersonKilled}>🙎‍♀️</button>
       <button onClick={addCoupleKilled}>👩‍❤️‍💋‍👩</button>
-
+      <button onClick={addFamilyKilled}>👨‍👨‍👧‍👦</button>
     </div>
   );
 }

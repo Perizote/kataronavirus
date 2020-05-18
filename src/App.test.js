@@ -36,15 +36,15 @@ test('Kill a couple person', ()=>{
 
 });
 
-// test('Kill a family', ()=>{
-//   const { getByText, getByLabelText } = render(<App />);
+test('Kill a family', ()=>{
+  const { getByText, getByLabelText } = render(<App />);
 
-//   const killFamily = getByText('👨‍👨‍👧‍👦');
+  const killFamily = getByText('👨‍👨‍👧‍👦');
 
-//   fireEvent.click(killFamily);
+  fireEvent.click(killFamily);
 
-//   const counterLabel = getByLabelText('Counter');
+  const counterLabel = getByLabelText('Counter');
 
-//   expect(counterLabel).toHaveTextContent('100:000');
+  expect(counterLabel).toHaveTextContent('004:000');
 
-// });
+});
