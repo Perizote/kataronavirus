@@ -23,3 +23,15 @@ test('Kill one person', ()=>{
   expect(counterLabel).toHaveTextContent('001:000');
 
 });
+test('Kill a couple person', ()=>{
+  const { getByText, getByLabelText } = render(<App />);
+
+  const killCouple = getByText('👩‍❤️‍💋‍👩');
+
+  fireEvent.click(killCouple);
+
+  const counterLabel = getByLabelText('Counter');
+
+  expect(counterLabel).toHaveTextContent('010:000');
+
+});
