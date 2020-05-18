@@ -48,3 +48,16 @@ test('Kill a family', ()=>{
   expect(counterLabel).toHaveTextContent('004:000');
 
 });
+
+test('Heal a person', ()=>{
+  const { getByText, getByLabelText } = render(<App />);
+
+  const killFamily = getByText('👨‍👨‍👧‍👦');
+
+  fireEvent.click(killFamily);
+
+  const counterLabel = getByLabelText('Counter');
+
+  expect(counterLabel).toHaveTextContent('004:000');
+
+});
