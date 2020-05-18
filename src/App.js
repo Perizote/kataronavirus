@@ -13,6 +13,7 @@ function App() {
   const [killed, setKilled] = useState(0);
   const [healPerson, setHealedPerson] = useState(0);
   const [healCouple, setHeadelCouple] = useState(0);
+  const [healFamily, setHealedFamily] = useState(0);
 
   const kill = (size) => {
     const increment = size;
@@ -31,16 +32,21 @@ function App() {
     setHeadelCouple(healCouple+2);
   }
 
+  const clickHealFamily = ()=>{
+    setHealedFamily(healFamily+4);
+  }
+
 
   return (
     <div className="App">
       <label htmlFor="labCount">Counter</label>
-  <div id="labCount">00{killed}:00{healPerson + healCouple}</div>
+  <div id="labCount">00{killed}:00{healPerson + healCouple + healFamily}</div>
       <button onClick={killPerson}>🙎‍♀️</button>
       <button onClick={killCouple}>👩‍❤️‍💋‍👩</button>
       <button onClick={killFamily}>👨‍👨‍👧‍👦</button>
       <button onClick={clickHealPerson}>🏥🙎‍♀️</button>
       <button onClick={clickHealCouple}>🏥👩‍❤️‍💋‍👩</button>
+      <button onClick={clickHealFamily}>🏥👨‍👨‍👧‍👦</button>
     </div>
   );
 }

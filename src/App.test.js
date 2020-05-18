@@ -74,3 +74,16 @@ test('Heal a couple', ()=>{
   expect(counterLabel).toHaveTextContent('000:002');
 
 });
+
+test('Heal a family', ()=>{
+  const { getByText, getByLabelText } = render(<App />);
+
+  const healFamily = getByText('🏥👨‍👨‍👧‍👦');
+
+  fireEvent.click(healFamily);
+
+  const counterLabel = getByLabelText('Counter');
+
+  expect(counterLabel).toHaveTextContent('000:004');
+
+});
