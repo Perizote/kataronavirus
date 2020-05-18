@@ -62,6 +62,19 @@ test('Kill 4 families', ()=>{
   expect(counterLabel).toBeTruthy();
 })
 
+test('Kill 25 families', ()=>{
+  const { getByText } = render(<App />);
+
+  const killFamily = getByText('☠👨‍👨‍👧‍👦');
+  for(let i=0;i<25;i+=1){
+    fireEvent.click(killFamily);
+  }
+  
+  const counterLabel = getByText('100:000');
+
+  expect(counterLabel).toBeTruthy();
+})
+
 test('Heal a person', ()=>{
   const { getByText, getByLabelText } = render(<App />);
 
@@ -110,6 +123,19 @@ test('Heal 4 families', ()=>{
   fireEvent.click(killFamily);
   fireEvent.click(killFamily);
   const counterLabel = getByText('000:016');
+
+  expect(counterLabel).toBeTruthy();
+})
+
+test('Heal 25 families', ()=>{
+  const { getByText } = render(<App />);
+
+  const healFamily = getByText('🏥👨‍👨‍👧‍👦');
+  for(let i=0;i<25;i+=1){
+    fireEvent.click(healFamily);
+  }
+  
+  const counterLabel = getByText('000:100');
 
   expect(counterLabel).toBeTruthy();
 })
