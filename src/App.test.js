@@ -52,12 +52,12 @@ test('Kill a family', ()=>{
 test('Heal a person', ()=>{
   const { getByText, getByLabelText } = render(<App />);
 
-  const killFamily = getByText('👨‍👨‍👧‍👦');
+  const healPerson = getByText('🏥🙎‍♀️');
 
-  fireEvent.click(killFamily);
+  fireEvent.click(healPerson);
 
   const counterLabel = getByLabelText('Counter');
 
-  expect(counterLabel).toHaveTextContent('004:000');
+  expect(counterLabel).toHaveTextContent('000:001');
 
 });
