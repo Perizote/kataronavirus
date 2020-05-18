@@ -49,6 +49,19 @@ test('Kill a family', ()=>{
 
 });
 
+test('Kill 4 families', ()=>{
+  const { getByText, getByLabelText, debug } = render(<App />);
+
+  const killFamily = getByText('☠👨‍👨‍👧‍👦');
+  fireEvent.click(killFamily);
+  fireEvent.click(killFamily);
+  fireEvent.click(killFamily);
+  fireEvent.click(killFamily);
+  const counterLabel = getByText('016:000');
+
+  expect(counterLabel).toBeTruthy();
+})
+
 test('Heal a person', ()=>{
   const { getByText, getByLabelText } = render(<App />);
 

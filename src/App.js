@@ -13,6 +13,8 @@ function App() {
   const [killed, setKilled] = useState(0);
   const [healed, setHealed] = useState(0);
 
+  const convert = (number)=> (number<10)? `00${number}` : ((number >= 10) ? `0${number}` : number)
+
   const kill = (size) => {
     const increment = size;
     setKilled( killed + increment );
@@ -34,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <label htmlFor="labCount">Counter</label>
-      <div id="labCount">00{killed}:00{healed}</div>
+      <div id="labCount">{convert(killed)}:00{healed}</div>
       <button onClick={killPerson}>☠🙎‍♀️</button>
       <button onClick={killCouple}>☠👩‍❤️‍💋‍👩</button>
       <button onClick={killFamily}>☠👨‍👨‍👧‍👦</button>
